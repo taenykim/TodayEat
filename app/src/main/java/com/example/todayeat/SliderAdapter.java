@@ -2,13 +2,13 @@ package com.example.todayeat;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +43,7 @@ public class SliderAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object o){
-        return view == (ConstraintLayout)o;
+        return view == (RelativeLayout)o;
     }
 
     @Override
@@ -73,7 +73,7 @@ public class SliderAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object){
-        container.removeView((ConstraintLayout)object);
+        container.removeView((RelativeLayout)object);
     }
 
 
