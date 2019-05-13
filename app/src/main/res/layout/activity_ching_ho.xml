@@ -11,26 +11,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick1"
-        android:text="결정장애초기" />
+        android:text="알촌쟁이" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick2"
-        android:text="결정장애중기" />
+        android:text="밥버거없이못살아" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick3"
-        android:text="결정장애말기" />
+        android:text="고칸사장친구" />
 
     <Button
         android:id="@+id/button11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick4"
-        android:text="결정장애그자체" />
+        android:text="햄최몇" />
 </LinearLayout>

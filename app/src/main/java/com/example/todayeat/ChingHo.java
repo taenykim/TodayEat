@@ -22,7 +22,7 @@ public class ChingHo extends AppCompatActivity {
 
     public void onClick1(View view){
         Intent intent = new Intent(this, MyCharacter.class);
-        intent.putExtra("Chingho1","결정장애 초기"); //키 - 보낼 값(밸류)
+        intent.putExtra("Chingho1","알촌쟁이"); //키 - 보낼 값(밸류)
 
         //액티비티 시작!
         startActivity(intent);
@@ -30,7 +30,7 @@ public class ChingHo extends AppCompatActivity {
     }
     public void onClick2(View view){
         Intent intent = new Intent(this, MyCharacter.class);
-        intent.putExtra("Chingho1","결정장애 중기"); //키 - 보낼 값(밸류)
+        intent.putExtra("Chingho1","밥버거없이못살아"); //키 - 보낼 값(밸류)
 
         //액티비티 시작!
         startActivity(intent);
@@ -38,7 +38,7 @@ public class ChingHo extends AppCompatActivity {
     }
     public void onClick3(View view){
         Intent intent = new Intent(this, MyCharacter.class);
-        intent.putExtra("Chingho1","결정장애 말기"); //키 - 보낼 값(밸류)
+        intent.putExtra("Chingho1","고칸사장친구"); //키 - 보낼 값(밸류)
 
         //액티비티 시작!
         startActivity(intent);
@@ -46,7 +46,7 @@ public class ChingHo extends AppCompatActivity {
     }
     public void onClick4(View view){
         Intent intent = new Intent(this, MyCharacter.class);
-        intent.putExtra("Chingho1","결정장애 그자체"); //키 - 보낼 값(밸류)
+        intent.putExtra("Chingho1","햄최몇"); //키 - 보낼 값(밸류)
 
         //액티비티 시작!
         startActivity(intent);

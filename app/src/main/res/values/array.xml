@@ -3,18 +3,33 @@
     <integer-array name="resId">
         <item>@drawable/baseline_accessibility_new_black_18dp</item>
         <item>@drawable/baseline_account_balance_black_18dp</item>
-
+        <item>@drawable/baseline_accessibility_new_black_18dp</item>
+        <item>@drawable/baseline_account_balance_black_18dp</item>
+        <item>@drawable/baseline_accessibility_new_black_18dp</item>
+        <item>@drawable/baseline_account_balance_black_18dp</item>
+        <item>@drawable/baseline_accessibility_new_black_18dp</item>
+        <item>@drawable/baseline_account_balance_black_18dp</item>
     </integer-array>
 
     <string-array name="title">
         <item>알촌</item>
         <item>미스터쉐프</item>
-
+        <item>유가네</item>
+        <item>고칸</item>
+        <item>일미</item>
+        <item>밥버거</item>
+        <item>짬뽕타임</item>
+        <item>플랜비</item>
     </string-array>
 
     <string-array name="content">
         <item>알촌입니다.</item>
         <item>미스터쉐프입니다.</item>
-
+        <item>유가네입니다.</item>
+        <item>고칸입니다.</item>
+        <item>일미입니다.</item>
+        <item>밥버거입니다.</item>
+        <item>짬뽕타임입니다.</item>
+        <item>플랜비입니다.</item>
     </string-array>
 </resources>
