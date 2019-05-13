@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#97D5E0"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -21,8 +21,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPager"
-        app:layout_constraintVertical_bias="0.194"
-        android:background="#F44400">
+        app:layout_constraintVertical_bias="0.194">
 
     </LinearLayout>
 
@@ -79,11 +78,12 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="387dp"
-        android:layout_height="1.4dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:layout_alignTop="@+id/buttonHome"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="-19dp"
-        android:background="#99000000" />
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="-12dp"
+        android:background="#CFFFFFFF" />
 
 </RelativeLayout>

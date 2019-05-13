@@ -21,11 +21,11 @@ public class SliderAdapter extends PagerAdapter {
     }
 
     public int[] slide_images = {
-            R.drawable.baseline_face_black_24dp,
-            R.drawable.baseline_menu_black_24dp,
-            R.drawable.baseline_face_black_24dp,
-            R.drawable.baseline_menu_black_24dp,
-            R.drawable.baseline_face_black_24dp
+            R.drawable.spaguetti,
+            R.drawable.brochettes,
+            R.drawable.shuffle,
+            R.drawable.rice,
+            R.drawable.fries
     };
 
     public String[] slide_headings = {
