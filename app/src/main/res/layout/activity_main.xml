@@ -46,7 +46,7 @@
         android:background="@drawable/baseline_face_black_24dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonHome"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_alignParentStart="true"
@@ -81,7 +81,7 @@
         android:id="@+id/view"
         android:layout_width="387dp"
         android:layout_height="1.4dp"
-        android:layout_alignTop="@+id/button3"
+        android:layout_alignTop="@+id/buttonHome"
         android:layout_centerInParent="true"
         android:layout_marginTop="-19dp"
         android:background="#99000000" />

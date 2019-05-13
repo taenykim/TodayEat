@@ -14,7 +14,12 @@ public class MyCharacter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_character);
 
+
+
+
         TextView chingho1= (TextView)findViewById(R.id.textView1);
+
+
 
 
         Intent intent = getIntent(); //이 액티비티를 부른 인텐트를 받는다.
@@ -34,6 +39,37 @@ public class MyCharacter extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재 화면의 제어권자
                         ChingHo.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent); // 다음 화면으로 넘어간다
+            }
+        });
+
+        Button bc = (Button)findViewById(R.id.buttonCharacter);
+        bc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        MyCharacter.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent); // 다음 화면으로 넘어간다
+            }
+        });
+        Button bh = (Button)findViewById(R.id.buttonHome);
+        bh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        MainActivity.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent); // 다음 화면으로 넘어간다
+            }
+        });
+        Button bl = (Button)findViewById(R.id.buttonList);
+        bl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        MyTwo.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
