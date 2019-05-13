@@ -1,8 +1,12 @@
 package com.example.todayeat;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class MyTwo extends AppCompatActivity {
@@ -18,9 +22,57 @@ public class MyTwo extends AppCompatActivity {
         adapter = new CustomAdapter();
         listView = (ListView) findViewById(R.id.listView);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                int imgRes = ((CustomDTO)adapter.getItem(position)).getResId();
+
+
+                // new Intent(현재 Activity의 Context, 시작할 Activity 클래스)
+                Intent intent = new Intent(MyTwo.this, DetailActivity.class);
+                // putExtra(key, value)
+                intent.putExtra("imgRes", imgRes);
+
+                startActivity(intent);
+            }
+        });
+
 
 
         setData();
+
+        Button bc = (Button)findViewById(R.id.buttonCharacter);
+        bc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        MyCharacter.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent); // 다음 화면으로 넘어간다
+            }
+        });
+        Button bh = (Button)findViewById(R.id.buttonHome);
+        bh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        MainActivity.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent); // 다음 화면으로 넘어간다
+            }
+        });
+        Button bl = (Button)findViewById(R.id.buttonList);
+        bl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        MyTwo.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent); // 다음 화면으로 넘어간다
+            }
+        });
+
 
         listView.setAdapter(adapter);
     }

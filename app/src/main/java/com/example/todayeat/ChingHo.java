@@ -16,6 +16,8 @@ public class ChingHo extends AppCompatActivity {
 
 
 
+
+
     }
 
     public void onClick1(View view){
