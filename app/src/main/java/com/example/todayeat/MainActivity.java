@@ -71,13 +71,13 @@ public class MainActivity extends AppCompatActivity {
             mDots[i] = new TextView(this);
             mDots[i].setText(Html.fromHtml("&#8226"));
             mDots[i].setTextSize(35);
-            mDots[i].setTextColor(Color.rgb(00,00,00));
+            mDots[i].setTextColor(Color.rgb(170,170,170));
 
             mDotLayout.addView(mDots[i]);
         }
 
         if(mDots.length > 0 ){
-            mDots[position].setTextColor(Color.WHITE);
+            mDots[position].setTextColor(Color.BLACK);
         }
     }
 

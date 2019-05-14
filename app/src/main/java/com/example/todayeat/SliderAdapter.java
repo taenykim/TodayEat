@@ -67,6 +67,7 @@ public class SliderAdapter extends PagerAdapter {
 
         slideImageView.setImageResource(slide_images[position]);
         slideHeading.setText(slide_headings[position]);
+        slideHeading.setTextColor(Color.BLACK);
 
         container.addView(view);
 

@@ -6,6 +6,20 @@
     android:orientation="vertical"
     >
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="칭호설정"
+        android:background="#0080CD"
+        android:paddingVertical="3dp"
+        android:textColor="#ffffff"/>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="421dp"
+        android:layout_height="211dp" />
+
     <Button
         android:id="@+id/button5"
         android:layout_width="match_parent"

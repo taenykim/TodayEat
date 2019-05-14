@@ -43,7 +43,7 @@ public class MyCharacter extends AppCompatActivity {
             }
         });
 
-        Button bc = (Button)findViewById(R.id.buttonCharacter);
+        Button bc = (Button)findViewById(R.id.buttonCharacter2);
         bc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,7 +53,7 @@ public class MyCharacter extends AppCompatActivity {
                 startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
-        Button bh = (Button)findViewById(R.id.buttonHome);
+        Button bh = (Button)findViewById(R.id.buttonHome2);
         bh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +63,7 @@ public class MyCharacter extends AppCompatActivity {
                 startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
-        Button bl = (Button)findViewById(R.id.buttonList);
+        Button bl = (Button)findViewById(R.id.buttonList2);
         bl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
