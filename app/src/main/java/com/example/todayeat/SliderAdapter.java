@@ -1,6 +1,7 @@
 package com.example.todayeat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -59,7 +60,8 @@ public class SliderAdapter extends PagerAdapter {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,"버튼클릭",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                v.getContext().startActivity(intent);
             }
         });
 
