@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "631699272680",
+    "firebase_url": "https://test-1d8ff.firebaseio.com",
+    "project_id": "test-1d8ff",
+    "storage_bucket": "test-1d8ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631699272680:android:efc7ccd9fa3581dd",
+        "android_client_info": {
+          "package_name": "com.example.todayeat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631699272680-91koa6llq89k2m8lok51oepcgoi1b8er.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.todayeat",
+            "certificate_hash": "4d5a33ce340558c4b784d3eded3bec6d116b24cf"
+          }
+        },
+        {
+          "client_id": "631699272680-i769kipsvat5kbksabr20k3kfibad4ae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGWHN953novl0LUiJ1YFTHzMnlAkxo6yI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631699272680-i769kipsvat5kbksabr20k3kfibad4ae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
