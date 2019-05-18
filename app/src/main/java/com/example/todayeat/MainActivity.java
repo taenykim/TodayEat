@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
         mDotLayout = (LinearLayout) findViewById(R.id.dotsLayout);
         sliderAdapter = new SliderAdapter(this);
