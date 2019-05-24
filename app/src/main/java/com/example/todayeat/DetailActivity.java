@@ -92,6 +92,15 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         intent = getIntent();
         imageView = (ImageView) findViewById(R.id.imageDetail);
 
+        name = (TextView)findViewById(R.id.name);
+
+        String n = intent.getExtras().getString("name");
+
+
+
+        name.setText(n);
+
+
         // "imgRes" key로 받은 값은 int 형이기 때문에 getIntExtra(key, defaultValue);
         // 받는 값이 String 형이면 getStringExtra(key);
         imageView.setImageResource(intent.getIntExtra("imgRes", 0));

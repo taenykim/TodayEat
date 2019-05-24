@@ -1,68 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.todayeat.MainActivity">
+    tools:context="com.example.todayeat.MyTwo">
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <TextView
+        android:id="@+id/text_sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:layout_alignLeft="@+id/text_name"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:text="Sort by "
+        android:textSize="15dp"
+        android:visibility="invisible" />
+
+    <CheckBox
+        android:id="@+id/check_userid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_sort"
+        android:layout_alignBottom="@+id/text_sort"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="-40dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_toRightOf="@+id/text_sort"
+        android:text="ID"
+        android:textSize="15dp" />
+
+
+    <CheckBox
+        android:id="@+id/check_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_sort"
+        android:layout_marginStart="41dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="-6dp"
+        android:layout_toEndOf="@+id/check_userid"
+        android:layout_toRightOf="@+id/check_userid"
+        android:text="Name"
+        android:textSize="15dp" />
+
+
+    <CheckBox
+        android:id="@+id/check_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_sort"
+        android:layout_alignBottom="@+id/text_sort"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_toStartOf="@+id/btn_select"
+        android:layout_toEndOf="@+id/check_name"
+        android:layout_toRightOf="@+id/check_name"
+        android:text="Age"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/btn_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/check_age"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp" />
-
-    <Button
-        android:id="@+id/buttonCharacter3"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginLeft="27dp"
-        android:layout_marginBottom="14dp"
-        android:layout_weight="1"
-        android:background="@drawable/user" />
-
-    <Button
-        android:id="@+id/buttonHome3"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="false"
-        android:layout_centerHorizontal="false"
-        android:layout_centerVertical="false"
-        android:layout_marginStart="188dp"
-        android:layout_marginLeft="188dp"
-        android:layout_marginRight="184dp"
-        android:layout_marginBottom="13dp"
-        android:layout_weight="1"
-        android:background="@drawable/home" />
-
-    <Button
-        android:id="@+id/buttonList3"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="355dp"
-        android:layout_marginLeft="355dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="12dp"
-        android:layout_weight="1"
-        android:background="@drawable/menu" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="0dp"
+        android:background="#AFEEEE"
+        android:text="View" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/line2"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:background="#eeeeee" />
+        android:layout_height="2dip"
+        android:layout_below="@+id/text_sort"
+        android:layout_marginTop="20dp"
+        android:background="#AAAAAA"/>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="401dp"
+        android:layout_height="653dp"
+        android:layout_below="@+id/line2"
+        android:layout_marginTop="5dp"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ListView
+            android:id="@+id/db_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+    </ScrollView>
 
 </RelativeLayout>
