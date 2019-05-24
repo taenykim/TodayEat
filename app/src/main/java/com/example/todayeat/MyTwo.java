@@ -90,6 +90,10 @@ public class MyTwo extends AppCompatActivity implements View.OnClickListener{
             intent.putExtra("number",tempData[2]);
             intent.putExtra("menu",tempData[3]);
 
+            //0 >> 분류
+            //1 >> 가게이름
+            //2 >> 전화번호
+            //3 >> 대표메뉴
             startActivity(intent);
         }
     };

@@ -52,6 +52,8 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
     private Intent intent;
     private ImageView imageView;
     private TextView name;
+    private TextView number;
+    private TextView menu;
 
     private GoogleMap mGoogleMap = null;
     private Marker currentMarker = null;
@@ -93,12 +95,18 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         imageView = (ImageView) findViewById(R.id.imageDetail);
 
         name = (TextView)findViewById(R.id.name);
+        number = (TextView)findViewById(R.id.number);
+        menu = (TextView)findViewById(R.id.menu);
 
         String n = intent.getExtras().getString("name");
-
+        String m = intent.getExtras().getString("number");
+        String r = intent.getExtras().getString("menu");
 
 
         name.setText(n);
+        number.setText(m);
+        menu.setText(r);
+
 
 
         // "imgRes" key로 받은 값은 int 형이기 때문에 getIntExtra(key, defaultValue);
