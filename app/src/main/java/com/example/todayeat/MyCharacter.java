@@ -1,15 +1,21 @@
 package com.example.todayeat;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+
 public class MyCharacter extends AppCompatActivity {
+    ImageView myChar;
 
 
     @Override
@@ -27,6 +33,10 @@ public class MyCharacter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_character);
+
+        myChar = (ImageView)findViewById(R.id.mychar);
+        GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
+        Glide.with(this).load(R.drawable.amugunalow).into(gifImage);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.app_toolbar);
         setSupportActionBar(mToolbar);
