@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MyTwo extends AppCompatActivity implements View.OnClickListener{
+public class ListActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -101,7 +101,7 @@ public class MyTwo extends AppCompatActivity implements View.OnClickListener{
             String[] tempData = arrayData.get(position).split("\\s+");
             Log.e("On Click", "Split Result = " + tempData);
 
-            Intent intent = new Intent(MyTwo.this, DetailActivity.class);
+            Intent intent = new Intent(ListActivity.this, DetailActivity.class);
             // putExtra(key, value)
 
             intent.putExtra("name",tempData[1]);

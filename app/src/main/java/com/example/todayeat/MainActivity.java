@@ -1,6 +1,5 @@
 package com.example.todayeat;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.view.ViewPager;
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재 화면의 제어권자
-                        MyTwo.class); // 다음 넘어갈 클래스 지정
+                        ListActivity.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
