@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         addDotsIndicator(2);
 
         mViewPager.addOnPageChangeListener(viewListener);
-        Button b = (Button)findViewById(R.id.button4);
+        Button b = (Button)findViewById(R.id.listbtn);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent); // 다음 화면으로 넘어간다
             }
         });
-        Button b2 = (Button)findViewById(R.id.button2);
+        Button b2 = (Button)findViewById(R.id.charbtn);
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
