@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,23 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
+import static com.example.todayeat.ListActivity.arrayData;
+
 public class SliderAdapter extends PagerAdapter {
     Context context;
     LayoutInflater layoutInflater;
+    private DatabaseReference mPostReference;
+    ArrayList<String> arl = new ArrayList<>();
+
 
     public SliderAdapter(Context context){
         this.context = context;
@@ -60,7 +75,17 @@ public class SliderAdapter extends PagerAdapter {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //0 >> 분류
+                //1 >> 가게이름
+                //2 >> 전화번호
+                //3 >> 대표메뉴
                 Intent intent = new Intent(v.getContext(), DetailActivity.class);
+
+                intent.putExtra("name","이름");
+                intent.putExtra("number","넘버");
+                intent.putExtra("menu","메뉴");
+
                 v.getContext().startActivity(intent);
             }
         });
@@ -78,6 +103,5 @@ public class SliderAdapter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object){
         container.removeView((RelativeLayout)object);
     }
-
 
 }
