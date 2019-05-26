@@ -27,6 +27,7 @@ public class ChingHo extends AppCompatActivity {
         //액티비티 시작!
         startActivity(intent);
         Toast.makeText(this,"칭호가 변경되었습니다.",Toast.LENGTH_LONG).show();
+        finish();
     }
     public void onClick2(View view){
         Intent intent = new Intent(this, MyCharacter.class);
@@ -35,6 +36,7 @@ public class ChingHo extends AppCompatActivity {
         //액티비티 시작!
         startActivity(intent);
         Toast.makeText(this,"칭호가 변경되었습니다.",Toast.LENGTH_LONG).show();
+        finish();
     }
     public void onClick3(View view){
         Intent intent = new Intent(this, MyCharacter.class);
@@ -43,6 +45,7 @@ public class ChingHo extends AppCompatActivity {
         //액티비티 시작!
         startActivity(intent);
         Toast.makeText(this,"칭호가 변경되었습니다.",Toast.LENGTH_LONG).show();
+        finish();
     }
     public void onClick4(View view){
         Intent intent = new Intent(this, MyCharacter.class);
@@ -51,5 +54,6 @@ public class ChingHo extends AppCompatActivity {
         //액티비티 시작!
         startActivity(intent);
         Toast.makeText(this,"칭호가 변경되었습니다.",Toast.LENGTH_LONG).show();
+        finish();
     }
 }
