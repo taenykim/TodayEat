@@ -27,27 +27,35 @@
                 android:id="@+id/check_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Age"
+                android:text="한식"
                 android:textSize="15dp" />
 
             <CheckBox
                 android:id="@+id/check_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="일식"
                 android:textSize="15dp" />
 
             <CheckBox
                 android:id="@+id/check_userid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ID"
+                android:text="중식"
+                android:textSize="15dp" />
+
+            <CheckBox
+                android:id="@+id/check_fast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="패스트푸드"
                 android:textSize="15dp" />
 
             <Button
                 android:id="@+id/btn_select"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
                 android:background="#AFEEEE"
                 android:text="View" />
 

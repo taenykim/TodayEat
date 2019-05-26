@@ -47,6 +47,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
     CheckBox check_ID;
     CheckBox check_Name;
     CheckBox check_Age;
+    CheckBox check_Fast;
 
     String ID;
     String name;
@@ -80,6 +81,8 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
         check_Name.setOnClickListener(this);
         check_Age = (CheckBox) findViewById(R.id.check_age);
         check_Age.setOnClickListener(this);
+        check_Fast = (CheckBox) findViewById(R.id.check_fast);
+        check_Fast.setOnClickListener(this);
 
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
         ListView listView = (ListView) findViewById(R.id.db_list_view);
@@ -87,7 +90,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
         listView.setOnItemClickListener(onClickListener);
 
 
-        check_ID.setChecked(true);
+        check_Name.setChecked(true);
         getFirebaseDatabase();
     }
 
@@ -187,23 +190,32 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
 
+            case R.id.check_fast:
+                check_Name.setChecked(false);
+                check_Age.setChecked(false);
+                check_ID.setChecked(false);
+                sort = "sort3";
+                break;
 
             case R.id.check_userid:
                 check_Name.setChecked(false);
                 check_Age.setChecked(false);
-                sort = "id";
+                check_Fast.setChecked(false);
+                sort = "sort4";
                 break;
 
             case R.id.check_name:
                 check_ID.setChecked(false);
                 check_Age.setChecked(false);
-                sort = "name";
+                check_Fast.setChecked(false);
+                sort = "sort2";
                 break;
 
             case R.id.check_age:
                 check_ID.setChecked(false);
                 check_Name.setChecked(false);
-                sort = "age";
+                check_Fast.setChecked(false);
+                sort = "sort";
                 break;
         }
     }
