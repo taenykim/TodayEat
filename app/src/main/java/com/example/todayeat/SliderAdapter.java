@@ -22,18 +22,30 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 import static com.example.todayeat.ListActivity.arrayData;
 
 public class SliderAdapter extends PagerAdapter {
     Context context;
     LayoutInflater layoutInflater;
+
     private DatabaseReference mPostReference;
-    ArrayList<String> arl = new ArrayList<>();
+    static ArrayList<String> arrayIndex =  new ArrayList<String>();
+    static ArrayList<String> arrayData = new ArrayList<String>();
+
+    String sort = "idx";
+    String ID;
+    String name;
+    long age;
+    String gender = "";
 
 
     public SliderAdapter(Context context){
         this.context = context;
+        getFirebaseDatabase();
     }
 
     public int[] slide_images = {
@@ -81,10 +93,12 @@ public class SliderAdapter extends PagerAdapter {
                 //2 >> 전화번호
                 //3 >> 대표메뉴
                 Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                Random random = new Random();
+                String[] tempData = arrayData.get(random.nextInt(6)).split("\\s+");
 
-                intent.putExtra("name","이름");
-                intent.putExtra("number","넘버");
-                intent.putExtra("menu","메뉴");
+                intent.putExtra("name",tempData[1]);
+                intent.putExtra("number",tempData[2]);
+                intent.putExtra("menu",tempData[3]);
 
                 v.getContext().startActivity(intent);
             }
@@ -102,6 +116,62 @@ public class SliderAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object){
         container.removeView((RelativeLayout)object);
+    }
+
+    public boolean IsExistID(){
+        boolean IsExist = arrayIndex.contains(ID);
+        return IsExist;
+    }
+
+    public void postFirebaseDatabase(boolean add){
+        mPostReference = FirebaseDatabase.getInstance().getReference();
+        Map<String, Object> childUpdates = new HashMap<>();
+        Map<String, Object> postValues = null;
+        if(add){
+            FirebasePost post = new FirebasePost(ID, name, age, gender);
+            postValues = post.toMap();
+        }
+        childUpdates.put("/id_list/" + ID, postValues);
+        mPostReference.updateChildren(childUpdates);
+    }
+
+    public void getFirebaseDatabase(){
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Log.e("getFirebaseDatabase", "key: " + dataSnapshot.getChildrenCount());
+                arrayData.clear();
+                arrayIndex.clear();
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    String key = postSnapshot.getKey();
+                    FirebasePost get = postSnapshot.getValue(FirebasePost.class);
+                    String[] info = {get.id, get.name, String.valueOf(get.age), get.gender};
+                    String Result = setTextLength(info[0],10) + setTextLength(info[1],10) + setTextLength(info[2],10) + setTextLength(info[3],10);
+                    arrayData.add(Result);
+                    arrayIndex.add(key);
+                    Log.d("getFirebaseDatabase", "key: " + key);
+                    Log.d("getFirebaseDatabase", "info: " + info[0] + info[1] + info[2] + info[3]);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w("getFirebaseDatabase","loadPost:onCancelled", databaseError.toException());
+            }
+        };
+        Query sortbyAge = FirebaseDatabase.getInstance().getReference().child("id_list").orderByChild(sort);
+        sortbyAge.addListenerForSingleValueEvent(postListener);
+    }
+
+    public String setTextLength(String text, int length){
+        if(text.length()<length){
+            int gap = length - text.length();
+            for (int i=0; i<gap; i++){
+                text = text + " ";
+            }
+        }
+        return text;
     }
 
 }
