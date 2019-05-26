@@ -36,7 +36,7 @@ public class MyCharacter extends AppCompatActivity {
 
         myChar = (ImageView)findViewById(R.id.mychar);
         GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
-        Glide.with(this).load(R.drawable.amugunalow).into(gifImage);
+        Glide.with(this).load(R.drawable.amuguna_char2).into(gifImage);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.app_toolbar);
         setSupportActionBar(mToolbar);
