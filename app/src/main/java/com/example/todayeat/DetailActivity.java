@@ -55,6 +55,10 @@ public class DetailActivity extends AppCompatActivity {
     private TextView number;
     private TextView menu;
 
+
+    public int coin=0;
+
+
     private GoogleMap mGoogleMap = null;
     private Marker currentMarker = null;
 
@@ -106,6 +110,18 @@ public class DetailActivity extends AppCompatActivity {
         name.setText(n);
         number.setText(m);
         menu.setText(r);
+
+
+    }
+
+    public void VisitCheck(View v){
+
+
+
+        coin = coin + 100;
+
+
+
 
 
     }

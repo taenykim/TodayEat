@@ -53,7 +53,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
     String name;
     long age;
     String gender = "";
-    String sort = "id";
+    String sort = "sort";
 
     ArrayAdapter<String> arrayAdapter;
 
@@ -90,7 +90,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
         listView.setOnItemClickListener(onClickListener);
 
 
-        check_Name.setChecked(true);
+        check_Age.setChecked(true);
         getFirebaseDatabase();
     }
 
