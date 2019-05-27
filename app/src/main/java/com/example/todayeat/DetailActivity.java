@@ -10,6 +10,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,40 +56,17 @@ public class DetailActivity extends AppCompatActivity {
     private TextView name;
     private TextView number;
     private TextView menu;
-
+    private Button checkbtn;
 
     public int coin=0;
 
 
-    private GoogleMap mGoogleMap = null;
-    private Marker currentMarker = null;
 
-    private static final String TAG = "googlemap_example";
-    private static final int GPS_ENABLE_REQUEST_CODE = 2001;
-    private static final int UPDATE_INTERVAL_MS = 1000;  // 1초
-    private static final int FASTEST_UPDATE_INTERVAL_MS = 500; // 0.5초
-
-
-    // onRequestPermissionsResult에서 수신된 결과에서 ActivityCompat.requestPermissions를 사용한 퍼미션 요청을 구별하기 위해 사용됩니다.
-    private static final int PERMISSIONS_REQUEST_CODE = 100;
-    boolean needRequest = false;
-
-
-    // 앱을 실행하기 위해 필요한 퍼미션을 정의합니다.
-    String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};  // 외부 저장소
-
-
-    Location mCurrentLocatiion;
-    LatLng currentPosition;
-
-
-    private FusedLocationProviderClient mFusedLocationClient;
-    private LocationRequest locationRequest;
-    private Location location;
-
-
-    private View mLayout;  // Snackbar 사용하기 위해서는 View가 필요합니다.
-    // (참고로 Toast에서는 Context가 필요했습니다.)
+    private static final int START_TIME_IN_MILLIS = 20000;
+    public static boolean mTimerRunning;
+    public static long mTimerLeftInMillis = START_TIME_IN_MILLIS;
+    private TextView mTextViewCountDown ;
+    private CountDownTimer mCountDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +90,27 @@ public class DetailActivity extends AppCompatActivity {
         number.setText(m);
         menu.setText(r);
 
+        mTextViewCountDown = findViewById(R.id.textView6);
+        if(mTimerRunning){
+            startTimer();
+        }
+        else{
+            mTextViewCountDown.setText("아직안묵었다");
+        }
+
+        checkbtn = findViewById(R.id.button3);
+        checkbtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(mTimerRunning){
+                    Toast.makeText(getApplicationContext(),"이미 눌렀습니다.",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    startTimer();
+                }
+            }
+        });
+
 
     }
 
@@ -125,7 +125,39 @@ public class DetailActivity extends AppCompatActivity {
 
 
     }
+
+    public void startTimer(){
+        mCountDownTimer= new CountDownTimer(mTimerLeftInMillis,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mTimerLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+                mTimerRunning=false;
+            }
+        }.start();
+
+        mTimerRunning = true;
+    }
+
+    public void updateCountDownText(){
+        int minutes = (int) (mTimerLeftInMillis/1000)/60;
+        int seconds = (int) (mTimerLeftInMillis/1000)%60;
+
+        String timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d",minutes,seconds);
+        mTextViewCountDown.setText(timeLeftFormatted);
+
+        if(minutes==0 && seconds==0){
+            mTimerLeftInMillis = START_TIME_IN_MILLIS;
+        }
+    }
 }
+
+
+
 
 
 
