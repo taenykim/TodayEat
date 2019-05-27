@@ -5,6 +5,8 @@ import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -68,6 +70,14 @@ public class DetailActivity extends AppCompatActivity {
     private TextView mTextViewCountDown ;
     private CountDownTimer mCountDownTimer;
 
+
+    private SQLiteDatabase  db;
+    DBHelper helper;
+    String dbName = "coinValue.db";
+    int dbVersion = 1;
+    String tag = "SQLite";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +116,7 @@ public class DetailActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"이미 눌렀습니다.",Toast.LENGTH_LONG).show();
                 }
                 else{
+                    VisitCheck(v);
                     startTimer();
                 }
             }
@@ -114,16 +125,23 @@ public class DetailActivity extends AppCompatActivity {
 
     }
 
-    public void VisitCheck(View v){
 
+    public void VisitCheck(View view){
 
+        helper = new DBHelper(this, dbName, null, dbVersion);
+        try {
+            db = helper.getWritableDatabase();
+        } catch (SQLiteException e) {
+            e.printStackTrace();
+            Log.e(tag, "데이터베이스를 얻어올 수 없음");
+            finish();
+        }
+        update();
+    }
 
-        coin = coin + 100;
-
-
-
-
-
+    public void update() {
+        db.execSQL("update cointable set COIN=coin+100 where COIN;");
+        Log.d(tag, "update 완료");
     }
 
     public void startTimer(){
