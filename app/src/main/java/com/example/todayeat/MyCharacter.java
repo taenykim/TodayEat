@@ -1,10 +1,12 @@
 package com.example.todayeat;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -45,20 +47,19 @@ public class MyCharacter extends AppCompatActivity {
 
 
 
-
-
         TextView chingho1= (TextView)findViewById(R.id.textView1);
-
-
-
 
         Intent intent = getIntent(); //이 액티비티를 부른 인텐트를 받는다.
         String ch1 = intent.getStringExtra("Chingho1"); //"jizard"문자 받아옴
-
-
         chingho1.setText(ch1);
 
 
+
+        TextView coinvalue= (TextView)findViewById(R.id.textView5);
+
+        Intent intent1 = getIntent(); //이 액티비티를 부른 인텐트를 받는다.
+        int ch2 = intent1.getIntExtra("Coinvalue",0); //"jizard"문자 받아옴
+        coinvalue.setText(""+ch2);
 
 
 
@@ -74,4 +75,6 @@ public class MyCharacter extends AppCompatActivity {
             }
         });
     }
+
+
 }

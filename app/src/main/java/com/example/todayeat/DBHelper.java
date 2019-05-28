@@ -16,13 +16,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "create table cointable(id integer primary key autoincrement, COIN INT);";
+        String sql = "CREATE TABLE coin_table(Coin INTEGER)";
         db.execSQL(sql);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "drop table cointable;";
+        String sql = "drop table coin_table;";
         db.execSQL(sql);
         onCreate(db);
     }

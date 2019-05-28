@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.location.Address;
@@ -45,6 +46,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.jetbrains.annotations.Contract;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
@@ -137,12 +139,29 @@ public class DetailActivity extends AppCompatActivity {
             finish();
         }
         update();
+        select();
     }
 
     public void update() {
-        db.execSQL("update cointable set COIN=coin+100 where COIN;");
-        Log.d(tag, "update 완료");
+        db.execSQL("insert into coin_table(Coin) values(0);");
+        db.execSQL("update coin_table set Coin = coin+100;");
     }
+
+   public void select(){
+       db = helper.getReadableDatabase();
+       Cursor cursor = db.rawQuery("SELECT * FROM coin_table",null);
+       cursor.moveToNext();
+       Log.d(tag, "" + cursor.getInt(0));
+
+       coin = cursor.getInt(0);
+       Intent coin_intent = new Intent(this, MyCharacter.class);
+       coin_intent.putExtra("Coinvalue", coin); //키 - 보낼 값(밸류)
+
+       startActivity(coin_intent);
+
+       cursor.close();
+       helper.close();
+   }
 
     public void startTimer(){
         mCountDownTimer= new CountDownTimer(mTimerLeftInMillis,1000) {
