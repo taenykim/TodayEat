@@ -55,10 +55,10 @@ public class MyCharacter extends AppCompatActivity {
 
 
 
-        TextView coinvalue= (TextView)findViewById(R.id.textView5);
+        TextView coinvalue= (TextView)findViewById(R.id.textView5); // coin값
 
-        Intent intent1 = getIntent(); //이 액티비티를 부른 인텐트를 받는다.
-        int ch2 = intent1.getIntExtra("Coinvalue",0); //"jizard"문자 받아옴
+        Intent intent1 = getIntent();
+        int ch2 = intent1.getIntExtra("Coinvalue",0);
         coinvalue.setText(""+ch2);
 
 

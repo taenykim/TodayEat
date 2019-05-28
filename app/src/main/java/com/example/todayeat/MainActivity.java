@@ -1,11 +1,15 @@
 package com.example.todayeat;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -17,6 +21,14 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout mDotLayout;
     private SliderAdapter sliderAdapter;
     private TextView[] mDots;
+    private DetailActivity detailActivity;
+
+    private SQLiteDatabase db;
+    DBHelper helper;
+    String dbName = "coinValue.db";
+    int dbVersion = 1;
+    String tag = "SQLite";
+    int coin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setCurrentItem(2);
 
         addDotsIndicator(2);
+
+        helper = new DBHelper(this, dbName, null, dbVersion); // cointable 관련
+        try {
+            db = helper.getWritableDatabase();
+        } catch (SQLiteException e) {
+            e.printStackTrace();
+            Log.e(tag, "데이터베이스를 얻어올 수 없음");
+            finish();
+        }
 
         mViewPager.addOnPageChangeListener(viewListener);
         Button b = (Button)findViewById(R.id.listbtn);
@@ -47,18 +68,29 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(
-                        getApplicationContext(), // 현재 화면의 제어권자
-                        MyCharacter.class); // 다음 넘어갈 클래스 지정
-                startActivity(intent); // 다음 화면으로 넘어간다
+                select();
             }
         });
 
 
-
     }
 
+    public void select(){
+        // cointable에 저장된 값 보여주기
+        db = helper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM coin_table",null);
+        cursor.moveToNext();
+        Log.d(tag, "" + cursor.getInt(0));
 
+        coin = cursor.getInt(0);
+        Intent coin_intent = new Intent(this, MyCharacter.class);
+        coin_intent.putExtra("Coinvalue", coin); //키 - 보낼 값(밸류)
+
+        startActivity(coin_intent);
+
+        cursor.close();
+        helper.close();
+    }
 
     public void addDotsIndicator(int position){
         mDotLayout.removeAllViews();

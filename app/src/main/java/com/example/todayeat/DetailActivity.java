@@ -118,7 +118,7 @@ public class DetailActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"이미 눌렀습니다.",Toast.LENGTH_LONG).show();
                 }
                 else{
-                    VisitCheck(v);
+                    VisitCheck(v); // coin값 증가
                     startTimer();
                 }
             }
@@ -144,7 +144,7 @@ public class DetailActivity extends AppCompatActivity {
 
     public void update() {
         db.execSQL("insert into coin_table(Coin) values(0);");
-        db.execSQL("update coin_table set Coin = coin+100;");
+        db.execSQL("update coin_table set Coin = coin+100;"); // coin값 100씩 증가
     }
 
    public void select(){
