@@ -60,7 +60,7 @@ public class MyCharacter extends AppCompatActivity {
         int ch2 = intent1.getIntExtra("Coinvalue",0);
         coinvalue.setText(""+ch2);
 
-        if(ch2<=1500){
+        if(ch2<=1200){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
             Glide.with(this).load(R.drawable.amuguna_char).into(gifImage);
         }
