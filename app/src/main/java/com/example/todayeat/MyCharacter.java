@@ -37,8 +37,7 @@ public class MyCharacter extends AppCompatActivity {
         setContentView(R.layout.activity_my_character);
 
         myChar = (ImageView)findViewById(R.id.mychar);
-        GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
-        Glide.with(this).load(R.drawable.amuguna_char2).into(gifImage);
+
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.app_toolbar);
         setSupportActionBar(mToolbar);
@@ -61,6 +60,14 @@ public class MyCharacter extends AppCompatActivity {
         int ch2 = intent1.getIntExtra("Coinvalue",0);
         coinvalue.setText(""+ch2);
 
+        if(ch2<=1000){
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
+            Glide.with(this).load(R.drawable.amuguna_char).into(gifImage);
+        }
+        else{
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
+            Glide.with(this).load(R.drawable.amuguna_char2).into(gifImage);
+        }
 
 
         Button b8 = (Button)findViewById(R.id.button8);
