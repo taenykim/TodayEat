@@ -107,6 +107,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(ListActivity.this, DetailActivity.class);
             // putExtra(key, value)
 
+            intent.putExtra("category",tempData[0]);
             intent.putExtra("name",tempData[1]);
             intent.putExtra("number",tempData[2]);
             intent.putExtra("menu",tempData[3]);

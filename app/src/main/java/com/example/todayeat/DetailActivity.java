@@ -60,6 +60,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView name;
     private TextView number;
     private TextView menu;
+    private TextView category;
     private Button checkbtn;
 
     public int coin=0;
@@ -87,20 +88,23 @@ public class DetailActivity extends AppCompatActivity {
 
         // MainActivity에서 보낸 imgRes를 받기위해 getIntent()로 초기화
         intent = getIntent();
-        imageView = (ImageView) findViewById(R.id.imageDetail);
+
 
         name = (TextView) findViewById(R.id.name);
         number = (TextView) findViewById(R.id.number);
         menu = (TextView) findViewById(R.id.menu);
+        category = (TextView) findViewById(R.id.category);
 
         String n = intent.getExtras().getString("name");
         String m = intent.getExtras().getString("number");
         String r = intent.getExtras().getString("menu");
-
+        String c = intent.getExtras().getString("category");
 
         name.setText(n);
         number.setText(m);
         menu.setText(r);
+        category.setText(c);
+
 
         mTextViewCountDown = findViewById(R.id.textView6);
         if(mTimerRunning){

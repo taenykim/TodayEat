@@ -8,14 +8,6 @@
     android:orientation="vertical"
     android:id="@+id/detail_activity">
 
-    <ImageView
-        android:id="@+id/imageDetail"
-        android:layout_width="match_parent"
-        android:layout_height="131dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
@@ -53,7 +45,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginBottom="371dp"
+        android:layout_marginBottom="369dp"
         android:background="#eeeeee"
         android:padding="100dp"
         android:text="가게정보"
@@ -71,12 +63,12 @@
         android:id="@+id/number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView"
+        android:layout_below="@+id/category"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="26dp"
         android:text="TextView" />
 
     <TextView
@@ -86,9 +78,9 @@
         android:layout_below="@+id/number"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="26dp"
         android:text="TextView" />
 
     <TextView
@@ -102,5 +94,17 @@
         android:layout_marginEnd="49dp"
         android:layout_marginRight="49dp"
         android:text="카운트다운no~" />
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView" />
 
 </RelativeLayout>
