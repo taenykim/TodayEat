@@ -21,42 +21,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="105dp" />
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="252dp"
-        android:background="#0080CD"
-        android:paddingHorizontal="80dp"
-        android:text="칭호"
-        android:textColor="#ffffff" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="187dp"
-        android:background="#0080CD"
-        android:paddingHorizontal="80dp"
-        android:text="상점"
-        android:textColor="#ffffff" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button9"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp"
-        android:background="#0080CD"
-        android:paddingHorizontal="68dp"
-        android:text="히스토리"
-        android:textColor="#ffffff" />
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -106,4 +70,41 @@
         android:layout_toRightOf="@+id/textView2"
         android:text="TextView"
         android:textSize="20dp" />
+
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="326dp"
+        android:onClick="onClick1"
+        android:text="알촌쟁이" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="179dp"
+        android:onClick="onClick2"
+        android:text="밥버거없이못살아" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="229dp"
+        android:onClick="onClick3"
+        android:text="고칸사장친구" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button5"
+        android:layout_marginTop="-326dp"
+        android:onClick="onClick4"
+        android:text="햄최몇" />
 </RelativeLayout>

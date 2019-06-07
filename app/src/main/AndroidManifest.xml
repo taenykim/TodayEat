@@ -33,7 +33,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetailActivity" />
-        <activity android:name=".ChingHo" />
         <activity android:name=".MyCharacter" />
         <activity android:name=".MainActivity">
             <intent-filter>

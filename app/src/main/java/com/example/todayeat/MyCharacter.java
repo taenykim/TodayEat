@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
@@ -60,28 +61,60 @@ public class MyCharacter extends AppCompatActivity {
         int ch2 = intent1.getIntExtra("Coinvalue",0);
         coinvalue.setText(""+ch2);
 
-        if(ch2<=1200){
+        if(ch2<=200){
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
+            Glide.with(this).load(R.drawable.char_real00).into(gifImage);
+        }
+        else if(ch2<=400){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
             Glide.with(this).load(R.drawable.amuguna_char).into(gifImage);
         }
-        else{
+        else if(ch2<=600){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
             Glide.with(this).load(R.drawable.amuguna_char2).into(gifImage);
         }
+        else{
+            GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
+            Glide.with(this).load(R.drawable.char_real3).into(gifImage);
+        }
 
 
-        Button b8 = (Button)findViewById(R.id.button8);
-        b8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(
-                        getApplicationContext(), // 현재 화면의 제어권자
-                        ChingHo.class); // 다음 넘어갈 클래스 지정
-                startActivity(intent); // 다음 화면으로 넘어간다
-                finish();
-            }
-        });
+
     }
+    public void onClick1(View view){
+        Intent intent = new Intent(this, MyCharacter.class);
+        intent.putExtra("Chingho1","알촌쟁이"); //키 - 보낼 값(밸류)
 
+        //액티비티 시작!
+        startActivity(intent);
+        Toast.makeText(this,"칭호가 변경되었습니다.",Toast.LENGTH_LONG).show();
+        finish();
+    }
+    public void onClick2(View view){
+        Intent intent = new Intent(this, MyCharacter.class);
+        intent.putExtra("Chingho1","밥버거없이못살아"); //키 - 보낼 값(밸류)
 
+        //액티비티 시작!
+        startActivity(intent);
+        Toast.makeText(this,"칭호가 변경되었습니다.",Toast.LENGTH_LONG).show();
+        finish();
+    }
+    public void onClick3(View view){
+        Intent intent = new Intent(this, MyCharacter.class);
+        intent.putExtra("Chingho1","고칸사장친구"); //키 - 보낼 값(밸류)
+
+        //액티비티 시작!
+        startActivity(intent);
+        Toast.makeText(this,"칭호가 변경되었습니다.",Toast.LENGTH_LONG).show();
+        finish();
+    }
+    public void onClick4(View view){
+        Intent intent = new Intent(this, MyCharacter.class);
+        intent.putExtra("Chingho1","햄최몇"); //키 - 보낼 값(밸류)
+
+        //액티비티 시작!
+        startActivity(intent);
+        Toast.makeText(this,"칭호가 변경되었습니다.",Toast.LENGTH_LONG).show();
+        finish();
+    }
 }
