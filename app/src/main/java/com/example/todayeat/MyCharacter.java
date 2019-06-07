@@ -70,17 +70,7 @@ public class MyCharacter extends AppCompatActivity {
         }
 
 
-        Button b8 = (Button)findViewById(R.id.button8);
-        b8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(
-                        getApplicationContext(), // 현재 화면의 제어권자
-                        ChingHo.class); // 다음 넘어갈 클래스 지정
-                startActivity(intent); // 다음 화면으로 넘어간다
-                finish();
-            }
-        });
+
     }
 
 

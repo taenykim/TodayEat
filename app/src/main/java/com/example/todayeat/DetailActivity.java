@@ -61,6 +61,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView number;
     private TextView menu;
     private TextView category;
+    private TextView test;
     private Button checkbtn;
 
     public int coin=0;
@@ -94,17 +95,20 @@ public class DetailActivity extends AppCompatActivity {
         number = (TextView) findViewById(R.id.number);
         menu = (TextView) findViewById(R.id.menu);
         category = (TextView) findViewById(R.id.category);
+        test = (TextView) findViewById(R.id.test);
+
 
         String n = intent.getExtras().getString("name");
         String m = intent.getExtras().getString("number");
         String r = intent.getExtras().getString("menu");
         String c = intent.getExtras().getString("category");
+        String t = intent.getExtras().getString("test");
 
         name.setText(n);
         number.setText(m);
         menu.setText(r);
         category.setText(c);
-
+        test.setText(t);
 
         mTextViewCountDown = findViewById(R.id.textView6);
         if(mTimerRunning){
