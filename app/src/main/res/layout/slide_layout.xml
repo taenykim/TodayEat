@@ -10,18 +10,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="285dp"
+        android:fontFamily="@font/tmonfont"
         android:text="연습"
-        android:textColor="#000000"
-        android:textSize="15dp" />
+        android:textColor="#4ca9fc"
+        android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/slide_image"
-        android:layout_width="wrap_content"
-        android:layout_height="207dp"
+        android:layout_width="87dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="121dp"
+        android:layout_marginTop="141dp"
         app:srcCompat="@drawable/shuffle" />
 
     <Button
