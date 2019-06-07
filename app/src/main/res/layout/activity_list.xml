@@ -94,6 +94,23 @@
             android:textSize="15dp"
             android:visibility="invisible" />
 
+        <ScrollView
+            android:id="@+id/scroll_view2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="0dp"
+            android:fillViewport="true"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <ListView
+                android:id="@+id/db_list_view2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+
+        </ScrollView>
+
     </LinearLayout>
 
 
