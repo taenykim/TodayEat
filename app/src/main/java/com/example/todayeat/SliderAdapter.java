@@ -40,7 +40,7 @@ public class SliderAdapter extends PagerAdapter {
     String sort = "idx";
     String ID;
     String name;
-    long age;
+    String age;
     String gender = "";
     int po;
 

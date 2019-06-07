@@ -51,7 +51,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
 
     String ID;
     String name;
-    long age;
+    String age;
     String gender = "";
     String sort = "sort";
 
