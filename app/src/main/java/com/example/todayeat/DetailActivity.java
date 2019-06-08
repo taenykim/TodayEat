@@ -67,14 +67,21 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
     private TextView number;
     private TextView menu;
     private TextView category;
-    private TextView test;
+    private TextView open;
+    private TextView clo;
+    private TextView price;
+
+    private double latitude;
+    private double longitude;
+
+
     private Button checkbtn;
 
     public int coin=0;
 
 
 
-    private static final int START_TIME_IN_MILLIS = 20000;
+    private static final int START_TIME_IN_MILLIS = 5000;
     public static boolean mTimerRunning;
     public static long mTimerLeftInMillis = START_TIME_IN_MILLIS;
     private TextView mTextViewCountDown ;
@@ -113,20 +120,34 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         number = (TextView) findViewById(R.id.number);
         menu = (TextView) findViewById(R.id.menu);
         category = (TextView) findViewById(R.id.category);
-        test = (TextView) findViewById(R.id.test);
+        open = (TextView) findViewById(R.id.open);
+        clo = (TextView) findViewById(R.id.close);
+        price = (TextView) findViewById(R.id.price);
 
 
         String n = intent.getExtras().getString("name");
         String m = intent.getExtras().getString("number");
         String r = intent.getExtras().getString("menu");
         String c = intent.getExtras().getString("category");
-        String t = intent.getExtras().getString("test");
+        String o = intent.getExtras().getString("open");
+        String close = intent.getExtras().getString("close");
+        String p = intent.getExtras().getString("price");
+        String la = intent.getExtras().getString("latitude");
+        String lo = intent.getExtras().getString("longitude");
+
+        latitude = Double.parseDouble(la);
+        longitude = Double.parseDouble(lo);
 
         name.setText(n);
         number.setText(m);
         menu.setText(r);
         category.setText(c);
-        test.setText(t);
+        open.setText(o);
+        clo.setText(close);
+        price.setText(p);
+
+
+
 
         mTextViewCountDown = findViewById(R.id.textView6);
         if(mTimerRunning){
@@ -170,7 +191,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
 
     public void update() {
         db.execSQL("insert into coin_table(Coin) values(0);");
-        db.execSQL("update coin_table set Coin = coin+100;"); // coin값 100씩 증가
+        db.execSQL("update coin_table set Coin = coin+1;"); // coin값 100씩 증가
     }
 
    public void select(){
@@ -234,7 +255,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
 
         // camera 좌쵸를 서울역 근처로 옮겨 봅니다.
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(
-                new LatLng(37.555744, 126.970431)   // 위도, 경도
+                new LatLng(latitude, longitude)   // 위도, 경도
         ));
 
         // 구글지도(지구) 에서의 zoom 레벨은 1~23 까지 가능합니다.
@@ -246,7 +267,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         // marker 표시
         // market 의 위치, 타이틀, 짧은설명 추가 가능.
         MarkerOptions marker = new MarkerOptions();
-        marker .position(new LatLng(37.555744, 126.970431))
+        marker .position(new LatLng(latitude, longitude))
                 .title("서울역")
                 .snippet("Seoul Station");
         googleMap.addMarker(marker).showInfoWindow(); // 마커추가,화면에출력

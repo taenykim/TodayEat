@@ -54,7 +54,12 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
         String age;
         String gender = "";
         String sort = "sort";
-        String test;
+        String open;
+        String close;
+        String latitude;
+        String longitude;
+        String price;
+
         ArrayAdapter<String> arrayAdapter;
         ArrayAdapter<String> arrayAdapter2;
         static ArrayList<String> arrayIndex =  new ArrayList<String>();
@@ -121,7 +126,12 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("name",tempData[1]);
                 intent.putExtra("number",tempData[2]);
                 intent.putExtra("menu",tempData[3]);
-                intent.putExtra("test",tempData2[0]);
+
+                intent.putExtra("open",tempData2[0]);
+                intent.putExtra("close",tempData2[1]);
+                intent.putExtra("price",tempData2[2]);
+                intent.putExtra("latitude",tempData2[3]);
+                intent.putExtra("longitude",tempData2[4]);
                 //0 >> 분류
                 //1 >> 가게이름
                 //2 >> 전화번호
@@ -141,7 +151,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
             Map<String, Object> childUpdates = new HashMap<>();
             Map<String, Object> postValues = null;
             if(add){
-                FirebasePost post = new FirebasePost(ID, name, age, gender,test);
+                FirebasePost post = new FirebasePost(ID, name, age, gender,open,close,latitude,longitude,price);
                 postValues = post.toMap();
             }
             childUpdates.put("/id_list/" + ID, postValues);
@@ -162,9 +172,9 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
                         String key = postSnapshot.getKey();
                         FirebasePost get = postSnapshot.getValue(FirebasePost.class);
                         String[] info = {get.id, get.name, String.valueOf(get.age), get.gender};
-                        String[] info2 = {get.test};
+                        String[] info2 = {get.open,get.close,get.price,get.latitude,get.longitude};
                         String Result = setTextLength(info[0],10) + setTextLength(info[1],10) + setTextLength(info[2],10) + setTextLength(info[3],10);
-                        String Result2 = setTextLength(info2[0],10);
+                        String Result2 = setTextLength(info2[0],10) + setTextLength(info2[1],20)+setTextLength(info2[2],20)+ setTextLength(info2[3],20) + setTextLength(info[4],20);
                         arrayData.add(Result);
                         arrayData2.add(Result2);
                         arrayIndex.add(key);

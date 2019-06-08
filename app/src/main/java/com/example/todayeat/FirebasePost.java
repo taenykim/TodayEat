@@ -16,18 +16,29 @@ public class FirebasePost {
     public String name;
     public String age;
     public String gender;
-    public String test;
+    public String open;
+    public String close;
+    public String latitude;
+    public String longitude;
+    public String price;
+
+
+
 
     public FirebasePost(){
         // Default constructor required for calls to DataSnapshot.getValue(FirebasePost.class)
     }
 
-    public FirebasePost(String id, String name, String age, String gender , String test) {
+    public FirebasePost(String id, String name, String age, String gender , String open , String close, String latitude, String longitude, String price) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.gender = gender;
-        this.test = test;
+        this.open = open;
+        this.close = close;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.price = price;
     }
 
     @Exclude
@@ -37,7 +48,11 @@ public class FirebasePost {
         result.put("name", name);
         result.put("age", age);
         result.put("gender", gender);
-        result.put("test",test);
+        result.put("open",open);
+        result.put("close",close);
+        result.put("latitude",latitude);
+        result.put("longitude",longitude);
+        result.put("price",price);
         return result;
     }
 }

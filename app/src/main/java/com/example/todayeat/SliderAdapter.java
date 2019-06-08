@@ -42,7 +42,13 @@ public class SliderAdapter extends PagerAdapter {
     String name;
     String age;
     String gender = "";
-    String test;
+
+    String open;
+    String close;
+    String latitude;
+    String longitude;
+    String price;
+
     int po;
 
 
@@ -238,7 +244,7 @@ public class SliderAdapter extends PagerAdapter {
         Map<String, Object> childUpdates = new HashMap<>();
         Map<String, Object> postValues = null;
         if(add){
-            FirebasePost post = new FirebasePost(ID, name, age, gender,test);
+            FirebasePost post = new FirebasePost(ID, name, age, gender,open,close,latitude,longitude,price);
             postValues = post.toMap();
         }
         childUpdates.put("/id_list/" + ID, postValues);

@@ -139,26 +139,26 @@ public class MyCharacter extends AppCompatActivity {
         coinvalue.setText(""+ch2);
         coooin=ch2;
 
-        if(ch2<=200){
+        if(ch2<=2){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
             Glide.with(this).load(R.drawable.egg2).into(gifImage);
             tbtn1.setText("강아지");
-            level_name.setText("결정장애 말기..@");
+            level_name.setText("달걀");
         }
-        else if(ch2<=400){
+        else if(ch2<=4){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
             Glide.with(this).load(R.drawable.amuguna_char).into(gifImage);
             tbtn1.setText("강아지");
             tbtn2.setText("뒤집개");
-            level_name.setText("결정장애 중기");
+            level_name.setText("슈퍼달걀");
         }
-        else if(ch2<=600){
+        else if(ch2<=6){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
             Glide.with(this).load(R.drawable.amuguna_char2).into(gifImage);
             tbtn1.setText("강아지");
             tbtn2.setText("뒤집개");
             tbtn3.setText("Thug life");
-            level_name.setText("결정장애 초기");
+            level_name.setText("메가달걀");
         }
         else{
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
@@ -167,7 +167,7 @@ public class MyCharacter extends AppCompatActivity {
             tbtn2.setText("뒤집개");
             tbtn3.setText("Thug life");
             tbtn4.setText("메달");
-            level_name.setText("결정장애 탈출!");
+            level_name.setText("달걀킹");
         }
 
 
@@ -186,7 +186,7 @@ public class MyCharacter extends AppCompatActivity {
         finish();
     }
     public void onClick2(View view){
-        if(coooin<400){
+        if(coooin<4){
             Toast.makeText(getApplicationContext(),"레벨이 부족합니다.",Toast.LENGTH_LONG).show();
         }
         else{
@@ -201,7 +201,7 @@ public class MyCharacter extends AppCompatActivity {
         }
     }
     public void onClick3(View view){
-        if(coooin<600){
+        if(coooin<6){
             Toast.makeText(getApplicationContext(),"레벨이 부족합니다.",Toast.LENGTH_LONG).show();
         }
         else{
@@ -217,7 +217,7 @@ public class MyCharacter extends AppCompatActivity {
 
     }
     public void onClick4(View view){
-        if(coooin<600){
+        if(coooin<8){
             Toast.makeText(getApplicationContext(),"레벨이 부족합니다.",Toast.LENGTH_LONG).show();
         }
         else{
