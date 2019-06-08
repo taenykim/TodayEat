@@ -50,9 +50,9 @@ public class FirebasePost {
         result.put("gender", gender);
         result.put("open",open);
         result.put("close",close);
+        result.put("price",price);
         result.put("latitude",latitude);
         result.put("longitude",longitude);
-        result.put("price",price);
         return result;
     }
 }

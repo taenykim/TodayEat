@@ -172,9 +172,10 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
                         String key = postSnapshot.getKey();
                         FirebasePost get = postSnapshot.getValue(FirebasePost.class);
                         String[] info = {get.id, get.name, String.valueOf(get.age), get.gender};
-                        String[] info2 = {get.open,get.close,get.price,get.latitude,get.longitude};
+                        String info2[]= {get.open,get.close,get.price,get.latitude,get.longitude};
+
                         String Result = setTextLength(info[0],10) + setTextLength(info[1],10) + setTextLength(info[2],10) + setTextLength(info[3],10);
-                        String Result2 = setTextLength(info2[0],10) + setTextLength(info2[1],20)+setTextLength(info2[2],20)+ setTextLength(info2[3],20) + setTextLength(info[4],20);
+                        String Result2 = setTextLength(info2[0],20) + setTextLength(info2[1],20)+setTextLength(info2[2],20)+ setTextLength(info2[3],30) + setTextLength(info2[4],30) ;
                         arrayData.add(Result);
                         arrayData2.add(Result2);
                         arrayIndex.add(key);

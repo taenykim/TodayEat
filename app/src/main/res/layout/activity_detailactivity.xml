@@ -39,7 +39,7 @@
         android:layout_below="@+id/menu"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="40dp"
         android:layout_toEndOf="@+id/textView9"
         android:layout_toRightOf="@+id/textView9"
         android:text="TextView" />
@@ -161,8 +161,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView11"
         android:layout_marginStart="50dp"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
         android:layout_toEndOf="@+id/number"
         android:layout_toRightOf="@+id/number"
         android:text="가격대 : " />

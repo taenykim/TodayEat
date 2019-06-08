@@ -71,6 +71,9 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
     private TextView clo;
     private TextView price;
 
+    String n;
+    String c;
+
     private double latitude;
     private double longitude;
 
@@ -124,19 +127,19 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         clo = (TextView) findViewById(R.id.close);
         price = (TextView) findViewById(R.id.price);
 
-
-        String n = intent.getExtras().getString("name");
+        n = intent.getExtras().getString("name");
         String m = intent.getExtras().getString("number");
         String r = intent.getExtras().getString("menu");
-        String c = intent.getExtras().getString("category");
+        c = intent.getExtras().getString("category");
         String o = intent.getExtras().getString("open");
         String close = intent.getExtras().getString("close");
         String p = intent.getExtras().getString("price");
         String la = intent.getExtras().getString("latitude");
         String lo = intent.getExtras().getString("longitude");
 
-        latitude = Double.parseDouble(la);
-        longitude = Double.parseDouble(lo);
+
+
+
 
         name.setText(n);
         number.setText(m);
@@ -147,6 +150,8 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         price.setText(p);
 
 
+        latitude = Double.parseDouble(la);
+        longitude = Double.parseDouble(lo);
 
 
         mTextViewCountDown = findViewById(R.id.textView6);
@@ -268,8 +273,8 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         // market 의 위치, 타이틀, 짧은설명 추가 가능.
         MarkerOptions marker = new MarkerOptions();
         marker .position(new LatLng(latitude, longitude))
-                .title("서울역")
-                .snippet("Seoul Station");
+                .title(n)
+                .snippet(c);
         googleMap.addMarker(marker).showInfoWindow(); // 마커추가,화면에출력
 
         // 마커클릭 이벤트 처리
