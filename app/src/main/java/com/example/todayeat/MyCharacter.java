@@ -57,7 +57,7 @@ public class MyCharacter extends AppCompatActivity {
         Intent intent = getIntent(); //이 액티비티를 부른 인텐트를 받는다.
         String ch1 = intent.getStringExtra("Chingho1"); //"jizard"문자 받아옴
 
-
+        TextView level_name = findViewById(R.id.textView4);
 
         TextView coinvalue= (TextView)findViewById(R.id.textView5); // coin값
 
@@ -70,12 +70,14 @@ public class MyCharacter extends AppCompatActivity {
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
             Glide.with(this).load(R.drawable.char_real00).into(gifImage);
             tbtn1.setText("강아지");
+            level_name.setText("결정장애 말기..@");
         }
         else if(ch2<=400){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
             Glide.with(this).load(R.drawable.amuguna_char).into(gifImage);
             tbtn1.setText("강아지");
             tbtn2.setText("고양이");
+            level_name.setText("결정장애 중기");
         }
         else if(ch2<=600){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
@@ -83,6 +85,7 @@ public class MyCharacter extends AppCompatActivity {
             tbtn1.setText("강아지");
             tbtn2.setText("고양이");
             tbtn3.setText("감자");
+            level_name.setText("결정장애 초기");
         }
         else{
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
@@ -91,6 +94,7 @@ public class MyCharacter extends AppCompatActivity {
             tbtn2.setText("고양이");
             tbtn3.setText("감자");
             tbtn4.setText("양파");
+            level_name.setText("결정장애 탈출!");
         }
 
 
@@ -101,6 +105,7 @@ public class MyCharacter extends AppCompatActivity {
 
         Intent intent = new Intent(this, MyCharacter.class);
         intent.putExtra("Chingho1","tbtn1"); //키 - 보낼 값(밸류)
+        intent.putExtra("Coinvalue", coooin);
 
         //액티비티 시작!
         startActivity(intent);
@@ -114,6 +119,7 @@ public class MyCharacter extends AppCompatActivity {
         else{
             Intent intent = new Intent(this, MyCharacter.class);
             intent.putExtra("Chingho1","tbtn2"); //키 - 보낼 값(밸류)
+            intent.putExtra("Coinvalue", coooin);
 
             //액티비티 시작!
             startActivity(intent);
@@ -128,6 +134,7 @@ public class MyCharacter extends AppCompatActivity {
         else{
             Intent intent = new Intent(this, MyCharacter.class);
             intent.putExtra("Chingho1","tbtn3"); //키 - 보낼 값(밸류)
+            intent.putExtra("Coinvalue", coooin);
 
             //액티비티 시작!
             startActivity(intent);
@@ -143,6 +150,7 @@ public class MyCharacter extends AppCompatActivity {
         else{
             Intent intent = new Intent(this, MyCharacter.class);
             intent.putExtra("Chingho1","tbtn4"); //키 - 보낼 값(밸류)
+            intent.putExtra("Coinvalue", coooin);
 
             //액티비티 시작!
             startActivity(intent);
