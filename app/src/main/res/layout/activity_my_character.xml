@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyCharacter">
+    tools:context=".MyCharacter"
+    android:background="#ffffff">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -178,4 +179,58 @@
         android:layout_marginBottom="16dp"
         android:onClick="onClick6"
         android:text="코인리셋" />
+
+    <ImageView
+        android:id="@+id/medal"
+        android:layout_width="51dp"
+        android:layout_height="65dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="45dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/gold_medal" />
+
+    <ImageView
+        android:id="@+id/dog"
+        android:layout_width="32dp"
+        android:layout_height="57dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginRight="95dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/dog" />
+
+    <ImageView
+        android:id="@+id/thug"
+        android:layout_width="94dp"
+        android:layout_height="78dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="156dp"
+        android:layout_marginLeft="156dp"
+        android:layout_marginTop="142dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/thug" />
+
+    <ImageView
+        android:id="@+id/pen"
+        android:layout_width="30dp"
+        android:layout_height="54dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="165dp"
+        android:layout_marginEnd="239dp"
+        android:layout_marginRight="239dp"
+        android:rotation="-40"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ggg" />
+
 </RelativeLayout>

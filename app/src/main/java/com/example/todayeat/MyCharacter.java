@@ -22,9 +22,18 @@ import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 public class MyCharacter extends AppCompatActivity {
     ImageView myChar;
     Button tbtn1,tbtn2,tbtn3,tbtn4;
+    public static boolean t1=false;
+    public static boolean t2=false;
+    public static boolean t3=false;
+    public static boolean t4=false;
     Button re_btn;
     int coooin;
     public int coin=0;
+
+    ImageView medal;
+    ImageView dog;
+    ImageView thug;
+    ImageView pen;
 
 
     private SQLiteDatabase  db;
@@ -57,6 +66,11 @@ public class MyCharacter extends AppCompatActivity {
         tbtn4=(Button)findViewById(R.id.tbtn4);
         re_btn=(Button)findViewById(R.id.reset_btn);
 
+        medal=(ImageView)findViewById(R.id.medal);
+        dog=(ImageView)findViewById(R.id.dog);
+        thug=(ImageView)findViewById(R.id.thug);
+        pen=(ImageView)findViewById(R.id.pen);
+
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.app_toolbar);
         setSupportActionBar(mToolbar);
@@ -68,6 +82,53 @@ public class MyCharacter extends AppCompatActivity {
 
         Intent intent = getIntent(); //이 액티비티를 부른 인텐트를 받는다.
         String ch1 = intent.getStringExtra("Chingho1"); //"jizard"문자 받아옴
+        if(ch1!=null){
+            if(ch1.equals("tbtn4")){
+                if(t4==true){
+                    t4=false;
+                }
+                else{
+                    t4=true;
+                }
+            }
+            else if(ch1.equals("tbtn1")){
+                if(t1==true){
+                    t1=false;
+                }
+                else{
+                    t1=true;
+                }
+            }
+            else if(ch1.equals("tbtn3")){
+                if(t3==true){
+                    t3=false;
+                }
+                else{
+                    t3=true;
+                }
+            }
+            else if(ch1.equals("tbtn2")){
+                if(t2==true){
+                    t2=false;
+                }
+                else{
+                    t2=true;
+                }
+            }
+        }
+
+        if(t4==true){
+            medal.setVisibility(View.VISIBLE);
+        }
+        if(t1==true){
+            dog.setVisibility(View.VISIBLE);
+        }
+        if(t3==true){
+            thug.setVisibility(View.VISIBLE);
+        }
+        if(t2==true){
+            pen.setVisibility(View.VISIBLE);
+        }
 
         TextView level_name = findViewById(R.id.textView4);
 
@@ -80,7 +141,7 @@ public class MyCharacter extends AppCompatActivity {
 
         if(ch2<=200){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
-            Glide.with(this).load(R.drawable.char_real00).into(gifImage);
+            Glide.with(this).load(R.drawable.egg2).into(gifImage);
             tbtn1.setText("강아지");
             level_name.setText("결정장애 말기..@");
         }
@@ -88,24 +149,24 @@ public class MyCharacter extends AppCompatActivity {
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
             Glide.with(this).load(R.drawable.amuguna_char).into(gifImage);
             tbtn1.setText("강아지");
-            tbtn2.setText("고양이");
+            tbtn2.setText("뒤집개");
             level_name.setText("결정장애 중기");
         }
         else if(ch2<=600){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
             Glide.with(this).load(R.drawable.amuguna_char2).into(gifImage);
             tbtn1.setText("강아지");
-            tbtn2.setText("고양이");
-            tbtn3.setText("감자");
+            tbtn2.setText("뒤집개");
+            tbtn3.setText("Thug life");
             level_name.setText("결정장애 초기");
         }
         else{
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
-            Glide.with(this).load(R.drawable.char_real3_2).into(gifImage);
+            Glide.with(this).load(R.drawable.egg_final).into(gifImage);
             tbtn1.setText("강아지");
-            tbtn2.setText("고양이");
-            tbtn3.setText("감자");
-            tbtn4.setText("양파");
+            tbtn2.setText("뒤집개");
+            tbtn3.setText("Thug life");
+            tbtn4.setText("메달");
             level_name.setText("결정장애 탈출!");
         }
 
@@ -125,7 +186,7 @@ public class MyCharacter extends AppCompatActivity {
         finish();
     }
     public void onClick2(View view){
-        if(coooin<=400){
+        if(coooin<400){
             Toast.makeText(getApplicationContext(),"레벨이 부족합니다.",Toast.LENGTH_LONG).show();
         }
         else{
@@ -140,7 +201,7 @@ public class MyCharacter extends AppCompatActivity {
         }
     }
     public void onClick3(View view){
-        if(coooin<=600){
+        if(coooin<600){
             Toast.makeText(getApplicationContext(),"레벨이 부족합니다.",Toast.LENGTH_LONG).show();
         }
         else{
@@ -156,7 +217,7 @@ public class MyCharacter extends AppCompatActivity {
 
     }
     public void onClick4(View view){
-        if(coooin<=800){
+        if(coooin<600){
             Toast.makeText(getApplicationContext(),"레벨이 부족합니다.",Toast.LENGTH_LONG).show();
         }
         else{
@@ -177,6 +238,10 @@ public class MyCharacter extends AppCompatActivity {
 
     public void onClick6(View view){
         VisitCheck(view); // coin값 증가
+        t1=false;
+        t2=false;
+        t3=false;
+        t4=false;
     }
     public void VisitCheck(View view){
 
