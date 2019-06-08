@@ -38,9 +38,7 @@ public class SliderAdapter extends PagerAdapter {
 
     static ArrayList<String> arrayData = new ArrayList<String>();
 
-    static ArrayList<String> arrayIndex2 =  new ArrayList<String>();
 
-    static ArrayList<String> arrayData2 = new ArrayList<String>();
 
     String sort = "idx";
     String ID;
@@ -115,18 +113,17 @@ public class SliderAdapter extends PagerAdapter {
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
                         String[] tempData = arrayData.get(random.nextInt(2)+2).split("\\s+");
-                        String[] tempData2 = arrayData2.get(random.nextInt(2)+2).split("\\s+");
 
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
                         intent.putExtra("number",tempData[2]);
                         intent.putExtra("menu",tempData[3]);
 
-                        intent.putExtra("open",tempData2[0]);
-                        intent.putExtra("close",tempData2[1]);
-                        intent.putExtra("price",tempData2[2]);
-                        intent.putExtra("latitude",tempData2[3]);
-                        intent.putExtra("longitude",tempData2[4]);
+                        intent.putExtra("open",tempData[4]);
+                        intent.putExtra("close",tempData[5]);
+                        intent.putExtra("price",tempData[6]);
+                        intent.putExtra("latitude",tempData[7]);
+                        intent.putExtra("longitude",tempData[8]);
 
 
 
@@ -149,18 +146,17 @@ public class SliderAdapter extends PagerAdapter {
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
                         String[] tempData = arrayData.get(random.nextInt(1)+4).split("\\s+");
-                        String[] tempData2 = arrayData2.get(random.nextInt(1)+4).split("\\s+");
+
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
                         intent.putExtra("number",tempData[2]);
                         intent.putExtra("menu",tempData[3]);
 
-                        intent.putExtra("open",tempData2[0]);
-                        intent.putExtra("close",tempData2[1]);
-                        intent.putExtra("price",tempData2[2]);
-                        intent.putExtra("latitude",tempData2[3]);
-                        intent.putExtra("longitude",tempData2[4]);
-
+                        intent.putExtra("open",tempData[4]);
+                        intent.putExtra("close",tempData[5]);
+                        intent.putExtra("price",tempData[6]);
+                        intent.putExtra("latitude",tempData[7]);
+                        intent.putExtra("longitude",tempData[8]);
                         v.getContext().startActivity(intent);
                     }
                 });
@@ -180,17 +176,17 @@ public class SliderAdapter extends PagerAdapter {
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
                         String[] tempData = arrayData.get(random.nextInt(6)).split("\\s+");
-                        String[] tempData2 = arrayData2.get(random.nextInt(6)).split("\\s+");
+
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
                         intent.putExtra("number",tempData[2]);
                         intent.putExtra("menu",tempData[3]);
 
-                        intent.putExtra("open",tempData2[0]);
-                        intent.putExtra("close",tempData2[1]);
-                        intent.putExtra("price",tempData2[2]);
-                        intent.putExtra("latitude",tempData2[3]);
-                        intent.putExtra("longitude",tempData2[4]);
+                        intent.putExtra("open",tempData[4]);
+                        intent.putExtra("close",tempData[5]);
+                        intent.putExtra("price",tempData[6]);
+                        intent.putExtra("latitude",tempData[7]);
+                        intent.putExtra("longitude",tempData[8]);
 
                         v.getContext().startActivity(intent);
                     }
@@ -211,17 +207,17 @@ public class SliderAdapter extends PagerAdapter {
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
                         String[] tempData = arrayData.get(random.nextInt(2)).split("\\s+");
-                        String[] tempData2 = arrayData2.get(random.nextInt(2)).split("\\s+");
+
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
                         intent.putExtra("number",tempData[2]);
                         intent.putExtra("menu",tempData[3]);
 
-                        intent.putExtra("open",tempData2[0]);
-                        intent.putExtra("close",tempData2[1]);
-                        intent.putExtra("price",tempData2[2]);
-                        intent.putExtra("latitude",tempData2[3]);
-                        intent.putExtra("longitude",tempData2[4]);
+                        intent.putExtra("open",tempData[4]);
+                        intent.putExtra("close",tempData[5]);
+                        intent.putExtra("price",tempData[6]);
+                        intent.putExtra("latitude",tempData[7]);
+                        intent.putExtra("longitude",tempData[8]);
 
                         v.getContext().startActivity(intent);
                     }
@@ -241,17 +237,17 @@ public class SliderAdapter extends PagerAdapter {
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
                         String[] tempData = arrayData.get(random.nextInt(2)+5).split("\\s+");
-                        String[] tempData2 = arrayData2.get(random.nextInt(2)+5).split("\\s+");
+
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
                         intent.putExtra("number",tempData[2]);
                         intent.putExtra("menu",tempData[3]);
 
-                        intent.putExtra("open",tempData2[0]);
-                        intent.putExtra("close",tempData2[1]);
-                        intent.putExtra("price",tempData2[2]);
-                        intent.putExtra("latitude",tempData2[3]);
-                        intent.putExtra("longitude",tempData2[4]);
+                        intent.putExtra("open",tempData[4]);
+                        intent.putExtra("close",tempData[5]);
+                        intent.putExtra("price",tempData[6]);
+                        intent.putExtra("latitude",tempData[7]);
+                        intent.putExtra("longitude",tempData[8]);
 
                         v.getContext().startActivity(intent);
                     }
@@ -301,20 +297,20 @@ public class SliderAdapter extends PagerAdapter {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.e("getFirebaseDatabase", "key: " + dataSnapshot.getChildrenCount());
                 arrayData.clear();
-                arrayData2.clear();
+
                 arrayIndex.clear();
-                arrayIndex2.clear();
+
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     String key = postSnapshot.getKey();
                     FirebasePost get = postSnapshot.getValue(FirebasePost.class);
-                    String[] info = {get.id, get.name, String.valueOf(get.age), get.gender};
-                    String info2[]= {get.open,get.close,get.price,get.latitude,get.longitude};
-                    String Result = setTextLength(info[0],10) + setTextLength(info[1],10) + setTextLength(info[2],10) + setTextLength(info[3],10);
-                    String Result2 = setTextLength(info2[0],20) + setTextLength(info2[1],20)+setTextLength(info2[2],20)+ setTextLength(info2[3],30) + setTextLength(info2[4],30) ;
+                    String info[] = {get.id, get.name, String.valueOf(get.age), get.gender,get.open,get.close,get.price,get.latitude,get.longitude};
+
+                    String Result = setTextLength(info[0],10) + setTextLength(info[1],10) + setTextLength(info[2],10) + setTextLength(info[3],10)+ setTextLength(info[4],10) +setTextLength(info[5],10) +setTextLength(info[6],10) +setTextLength(info[7],30) +setTextLength(info[8],30);
+
                     arrayData.add(Result);
                     arrayIndex.add(key);
-                    arrayData2.add(Result2);
-                    arrayIndex2.add(key);
+
+
                     Log.d("getFirebaseDatabase", "key: " + key);
                     Log.d("getFirebaseDatabase", "info: " + info[0] + info[1] + info[2] + info[3]);
                 }
