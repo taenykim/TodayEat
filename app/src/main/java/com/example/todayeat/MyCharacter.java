@@ -1,7 +1,9 @@
 package com.example.todayeat;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +22,16 @@ import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 public class MyCharacter extends AppCompatActivity {
     ImageView myChar;
     Button tbtn1,tbtn2,tbtn3,tbtn4;
+    Button re_btn;
     int coooin;
+    public int coin=0;
+
+
+    private SQLiteDatabase  db;
+    DBHelper helper;
+    String dbName = "coinValue.db";
+    int dbVersion = 1;
+    String tag = "SQLite";
 
 
     @Override
@@ -44,6 +55,7 @@ public class MyCharacter extends AppCompatActivity {
         tbtn2=(Button)findViewById(R.id.tbtn2);
         tbtn3=(Button)findViewById(R.id.tbtn3);
         tbtn4=(Button)findViewById(R.id.tbtn4);
+        re_btn=(Button)findViewById(R.id.reset_btn);
 
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.app_toolbar);
@@ -163,5 +175,42 @@ public class MyCharacter extends AppCompatActivity {
         Toast.makeText(this,"준비중입니다.",Toast.LENGTH_LONG).show();
     }
 
+    public void onClick6(View view){
+        VisitCheck(view); // coin값 증가
+    }
+    public void VisitCheck(View view){
 
+        helper = new DBHelper(this, dbName, null, dbVersion);
+        try {
+            db = helper.getWritableDatabase();
+        } catch (SQLiteException e) {
+            e.printStackTrace();
+            Log.e(tag, "데이터베이스를 얻어올 수 없음");
+            finish();
+        }
+        update();
+        select();
+    }
+
+    public void update() {
+        db.execSQL("insert into coin_table(Coin) values(0);");
+        db.execSQL("update coin_table set Coin = 0;"); // coin값 0
+    }
+
+    public void select(){
+        db = helper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM coin_table",null);
+        cursor.moveToNext();
+        Log.d(tag, "" + cursor.getInt(0));
+
+        coin = cursor.getInt(0);
+        Intent coin_intent = new Intent(this, MyCharacter.class);
+        coin_intent.putExtra("Coinvalue", coin); //키 - 보낼 값(밸류)
+
+        startActivity(coin_intent);
+
+        cursor.close();
+        helper.close();
+        finish();
+    }
 }

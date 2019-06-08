@@ -169,6 +169,7 @@ public class DetailActivity extends AppCompatActivity {
 
        cursor.close();
        helper.close();
+       finish();
    }
 
     public void startTimer(){
