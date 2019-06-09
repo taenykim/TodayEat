@@ -84,7 +84,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
 
 
 
-    private static final int START_TIME_IN_MILLIS = 5000;
+    private static final int START_TIME_IN_MILLIS = 10000;
     public static boolean mTimerRunning;
     public static long mTimerLeftInMillis = START_TIME_IN_MILLIS;
     private TextView mTextViewCountDown ;
@@ -159,7 +159,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
             startTimer();
         }
         else{
-            mTextViewCountDown.setText("아직안묵었다");
+            mTextViewCountDown.setText("쿨타임");
         }
 
         checkbtn = findViewById(R.id.button3);

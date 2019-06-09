@@ -162,7 +162,7 @@ public class MyCharacter extends AppCompatActivity {
         }
         else{
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(myChar);
-            Glide.with(this).load(R.drawable.egg_final).into(gifImage);
+            Glide.with(this).load(R.drawable.eggking).into(gifImage);
             tbtn1.setText("강아지");
             tbtn2.setText("뒤집개");
             tbtn3.setText("Thug life");
@@ -186,7 +186,7 @@ public class MyCharacter extends AppCompatActivity {
         finish();
     }
     public void onClick2(View view){
-        if(coooin<4){
+        if(coooin<3){
             Toast.makeText(getApplicationContext(),"레벨이 부족합니다.",Toast.LENGTH_LONG).show();
         }
         else{
@@ -201,7 +201,7 @@ public class MyCharacter extends AppCompatActivity {
         }
     }
     public void onClick3(View view){
-        if(coooin<6){
+        if(coooin<5){
             Toast.makeText(getApplicationContext(),"레벨이 부족합니다.",Toast.LENGTH_LONG).show();
         }
         else{
@@ -217,7 +217,7 @@ public class MyCharacter extends AppCompatActivity {
 
     }
     public void onClick4(View view){
-        if(coooin<8){
+        if(coooin<7){
             Toast.makeText(getApplicationContext(),"레벨이 부족합니다.",Toast.LENGTH_LONG).show();
         }
         else{

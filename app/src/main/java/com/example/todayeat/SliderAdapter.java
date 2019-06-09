@@ -175,7 +175,7 @@ public class SliderAdapter extends PagerAdapter {
 
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
-                        String[] tempData = arrayData.get(27).split("\\s+");
+                        String[] tempData = arrayData.get(random.nextInt(27)).split("\\s+");
 
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
@@ -261,7 +261,7 @@ public class SliderAdapter extends PagerAdapter {
 
         slideImageView.setImageResource(slide_images[position]);
         slideHeading.setText(slide_headings[position]);
-        slideHeading.setTextColor(Color.rgb(0x0a,0x24,0x3b));
+        slideHeading.setTextColor(Color.rgb(0x11,0x11,0x11));
 
         container.addView(view);
 
