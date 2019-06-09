@@ -112,7 +112,7 @@ public class SliderAdapter extends PagerAdapter {
 
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
-                        String[] tempData = arrayData.get(random.nextInt(2)+2).split("\\s+");
+                        String[] tempData = arrayData.get(random.nextInt(7)).split("\\s+");
 
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
@@ -145,7 +145,7 @@ public class SliderAdapter extends PagerAdapter {
 
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
-                        String[] tempData = arrayData.get(random.nextInt(1)+4).split("\\s+");
+                        String[] tempData = arrayData.get(random.nextInt(6)+7).split("\\s+");
 
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
@@ -175,7 +175,7 @@ public class SliderAdapter extends PagerAdapter {
 
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
-                        String[] tempData = arrayData.get(random.nextInt(6)).split("\\s+");
+                        String[] tempData = arrayData.get(27).split("\\s+");
 
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
@@ -206,7 +206,7 @@ public class SliderAdapter extends PagerAdapter {
 
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
-                        String[] tempData = arrayData.get(random.nextInt(2)).split("\\s+");
+                        String[] tempData = arrayData.get(random.nextInt(7)+13).split("\\s+");
 
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
@@ -236,7 +236,7 @@ public class SliderAdapter extends PagerAdapter {
 
                         Intent intent = new Intent(v.getContext(), DetailActivity.class);
                         Random random = new Random();
-                        String[] tempData = arrayData.get(random.nextInt(2)+5).split("\\s+");
+                        String[] tempData = arrayData.get(random.nextInt(7)+20).split("\\s+");
 
                         intent.putExtra("category",tempData[0]);
                         intent.putExtra("name",tempData[1]);
